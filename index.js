@@ -31,11 +31,21 @@ app.post('/criar', (requisicao, resposta) => {
             return console.log(erro)
         }
 
-        resposta.redirect('')
+        resposta.redirect('/')
     })
 })
 
 app.get('/', (requisicao, resposta) => {
+    const sql = 'SELECT * FROM tarefas'
+
+    conexao.query(sql, (erro, dados) => {
+        if (erro) {
+            return console.log(erro)
+        }
+
+        console.log(dados)
+    })
+
     resposta.render('home')
 })
 
