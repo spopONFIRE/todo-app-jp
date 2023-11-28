@@ -105,7 +105,7 @@ app.post('/criar', (requisicao, resposta) => {
 app.get('/completas', (requisicao, resposta) => {
     const sql = `
         SELECT * FROM tarefas
-        WHERE completas = 1
+        WHERE completa = 1
     `
 
     conexao.query(sql, (erro, dados) => {
